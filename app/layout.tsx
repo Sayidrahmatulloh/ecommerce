@@ -1,34 +1,26 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Hanken_Grotesk } from 'next/font/google'
+import './globals.css'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const hkGrotesk = Hanken_Grotesk({
+  variable: '--font-hk-grotesk',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+})
 
 export const metadata: Metadata = {
-  title: "Ecommerce App",
-  description: "An ecommerce application built with Next.js",
-};
+  title: 'Ecommerce App',
+  description: 'An ecommerce application built with Next.js',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang='en'>
+      <body className={`${hkGrotesk.className} antialiased`}>{children}</body>
     </html>
-  );
+  )
 }
